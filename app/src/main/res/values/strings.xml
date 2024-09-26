@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">audiolp</string>
+    <string name="focus_activity">AudioFocusActivity</string>
+</resources>

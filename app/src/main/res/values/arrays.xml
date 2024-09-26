@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="audio_usage_list">
+        <item>USAGE_GAME</item>
+        <item>USAGE_MEDIA</item>
+        <item>USAGE_ALARM</item>
+        <item>USAGE_ASSISTANT</item>
+        <item>USAGE_NOTIFICATION</item>
+        <item>USAGE_NOTIFICATION_EVENT</item>
+        <item>USAGE_VOICE_COMMUNICATION</item>
+        <item>USAGE_NOTIFICATION_RINGTONE</item>
+        <item>USAGE_ASSISTANCE_SONIFICATION</item>
+        <item>USAGE_ASSISTANCE_ACCESSIBILITY</item>
+        <item>USAGE_VOICE_COMMUNICATION_SIGNALLING</item>
+        <item>USAGE_ASSISTANCE_NAVIGATION_GUIDANCE</item>
+    </string-array>
+
+    <string-array name="audio_focus_list">
+        <item>GAIN</item>
+        <item>GAIN_TRANSIENT</item>
+        <item>GAIN_TRANSIENT_MAY_DUCK</item>
+        <item>GAIN_TRANSIENT_EXCLUSIVE</item>
+    </string-array>
+
+    <string-array name="volume_group_list">
+        <item>GROUP_MEDIA</item>
+        <item>GROUP_NAVIGATION</item>
+        <item>GROUP_VOICE_COMMAND</item>
+        <item>GROUP_CALL_RING</item>
+        <item>GROUP_CALL</item>
+        <item>GROUP_ALARM</item>
+        <item>GROUP_NOTIFICATION</item>
+        <item>GROUP_SYSTEM_SOUND</item>
+    </string-array>
+</resources>

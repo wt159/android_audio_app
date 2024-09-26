@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    tools:deviceIds="wear">
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <Button
+            android:layout_marginStart="20dp"
+            android:id="@+id/focus_activity"
+            android:text="focus activity"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"/>
+
+        <Button
+            android:layout_marginStart="20dp"
+            android:id="@+id/custom1"
+            android:text="custom 1"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"/>
+
+        <Button
+            android:layout_marginStart="20dp"
+            android:id="@+id/custom2"
+            android:text="custom 2"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"/>
+
+        <Button
+            android:layout_marginStart="20dp"
+            android:id="@+id/custom3"
+            android:text="custom 3"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"/>
+
+        <Button
+            android:layout_marginStart="20dp"
+            android:id="@+id/custom4"
+            android:text="custom 4"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" >
+
+        <Spinner
+            android:id="@+id/usage_spinner"
+            android:entries="@array/audio_usage_list"
+            android:layout_width="260dp"
+            android:textAlignment="center"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:overlapAnchor="false"
+            android:spinnerMode="dropdown" />
+
+        <Spinner
+            android:id="@+id/focus_spinner"
+            android:entries="@array/audio_focus_list"
+            android:layout_width="260dp"
+            android:textAlignment="center"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:overlapAnchor="false"
+            android:spinnerMode="dropdown" />
+
+        <Button
+            android:id="@+id/play_custom_button"
+            android:text="播放"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="60dp" >
+
+        <Spinner
+            android:id="@+id/volume_spinner"
+            android:entries="@array/volume_group_list"
+            android:layout_width="260dp"
+            android:textAlignment="center"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:overlapAnchor="false"
+            android:spinnerMode="dropdown" />
+
+        <SeekBar
+            android:id="@+id/volume_seek"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:fadingEdgeLength="50dp"
+            android:max="36"
+            android:maxHeight="5.0dp"
+            android:minHeight="5.0dp"
+            android:layout_gravity="center_vertical"
+            android:progress="10" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="60dp" >
+
+        <Button
+            android:id="@+id/start_record_button"
+            android:text="开始录音"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"/>
+
+        <Button
+            android:id="@+id/start_record_ext_button"
+            android:text="开始录音(车外)"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"/>
+
+        <Button
+            android:id="@+id/start_record_ecns_button"
+            android:text="开始录音(ecns)"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"/>
+
+        <Button
+            android:id="@+id/start_record_becall_button"
+            android:text="开始录音(b/e call)"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="60dp" >
+
+
+        <Button
+            android:id="@+id/stop_record_button"
+            android:text="停止录音"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"/>
+
+        <Button
+            android:id="@+id/stop_record_ext_button"
+            android:text="停止录音(车外)"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"/>
+
+        <Button
+            android:id="@+id/stop_record_ecns_button"
+            android:text="停止录音(ecns)"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"/>
+
+        <Button
+            android:id="@+id/stop_record_becall_button"
+            android:text="停止录音(b/e call)"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"/>
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

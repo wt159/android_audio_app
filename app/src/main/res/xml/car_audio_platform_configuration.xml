@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<platform-configs Version="1">
+    <!-- 平台化CarAudioService配置文件，包含音量曲线、焦点、音效等等 -->
+
+    <VolumeCurveConfig>
+        <item VolumeMaxLevel="5"/>
+        <item VolumeMinLevel="0"/>
+        <item VolumeDefaultLevel="3"/>
+        <item VolumeCurve="-90,-80,-70,-60,-50,0"/>  <!-- 音量曲线，个数等于VolumeMaxLevel + 1 -->
+    </VolumeCurveConfig>
+   
+    <EQConfig>
+        <item EQBands="6"/> <!-- 均衡器频段数  -->
+        <item EQCenterFreq = "40,80,500,1000,5000,16000" /> <!-- 均衡器个频段中心频率 数值设置必须等于EQBands -->
+        <item EQMaxGain="9"/> <!-- 均衡器调节最大值  -->
+        <item EQMixGain="-9"/> <!-- 均衡器调节最小值  -->
+        <item EQNamesOfPresets="自定义,流行,爵士,复古,民谣"/> <!--  EQ默认模式名字，EQNumOfPresets所对应的名字  -->
+        <item EQNumOfPresets="5"/> <!--  EQ预设模式个数，0：自定义， 1：流行 ...  -->
+        <item EQDefaultMode="0"/>  <!--  EQ默认模式，在EQNumOfPresets范围内  -->
+    </EQConfig>
+    
+    <FaderBalanceConfig>
+        <item FaderLevelRange = "9" /> <!-- 衰减可调最大Gain值  -->
+        <item DefaultFaderValue = "0" /> <!-- 衰减默认值 数值范围-FaderLevelRange~FaderLevelRange -->
+        <item BalanceLevelRange = "9" /> <!-- 平衡可调最大Gain值  -->
+        <item DefaultBalanceValue = "0" /> <!-- 平衡默认值 数值范围-BalanceLevelRange ~ BalanceLevelRange -->
+        <item Balance_Gain = "0,-1,  -2,-3,-5,-8,-13,-20,-30,-145" /> <!-- 平衡增益表 -->
+        <item Fader_Gain = "0,-1,-2, -3,-5,-8,-13,-20,-30,-145" /> <!-- 衰减增益表 -->
+    </FaderBalanceConfig>
+
+</platform-configs>
