@@ -54,21 +54,14 @@ public class MainActivity extends AppCompatActivity {
     // 录音权限
     private boolean mPermissionRecord = false;
     private static String mPermissionKeyRecord = Manifest.permission.RECORD_AUDIO;
-    private static final int PERMISSION_REQUEST_CODE_RECORD = 1;
-
     // car volume 权限
-    private boolean mPermissionCarVolume = false;
     private static String mPermissionKeyCarVolume = "android.car.permission.CAR_CONTROL_AUDIO_VOLUME";
-
-    private static final int PERMISSION_REQUEST_CODE_CARVOLUME = 2;
 
     // 文件读写权限
     private boolean mPermissionFile = false;
     private static String mPermissionKeyFile = Manifest.permission.WRITE_EXTERNAL_STORAGE;
-    private static final int PERMISSION_REQUEST_CODE_FILE = 3;
     boolean mPermissionCarFile = false;
     private static String mPermissionKeyCarSetting = "android.car.permission.CAR_CONTROL_AUDIO_SETTINGS";
-    static final int PERMISSION_REQUEST_CODE_SETTINGS = 4;
     boolean mPermissionCarSettings = false;
     private Context mContext;
 
@@ -80,10 +73,6 @@ public class MainActivity extends AppCompatActivity {
         mContext = getApplicationContext();
         // 权限申请
         requestPermissionAll();
-//        requestPermissionRecord();
-//        requestPermissionCarVolume();
-//        requestPermissionFile();
-//        requestPermissionAudioSetting();
 
         mAudioController = new AudioController(this);
 
@@ -168,31 +157,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case PERMISSION_REQUEST_CODE_RECORD:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                    mPermissionRecord = true;
-                log("permission record " + (mPermissionRecord ? "granted" : "denied"));
-                break;
-            case PERMISSION_REQUEST_CODE_CARVOLUME:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                    mPermissionCarVolume = true;
-                log("permission car volume " + (mPermissionCarVolume ? "granted" : "denied"));
-                break;
-            case PERMISSION_REQUEST_CODE_FILE:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                    mPermissionCarFile = true;
-                log("permission car file " + (mPermissionCarFile ? "granted" : "denied"));
-                break;
-            case PERMISSION_REQUEST_CODE_SETTINGS:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                    mPermissionCarSettings = true;
-                log("permission car settings " + (mPermissionCarSettings ? "granted" : "denied"));
-                break;
-            default:
-                log( "permission nums: " + permissions.length + " result nums: " + grantResults.length);
-                break;
-        }
+        log( "permission nums: " + permissions.length + " result nums: " + grantResults.length);
         for (int i = 0; i < permissions.length; i++) {
             boolean permissionResult = false;
             if (grantResults.length > 0 && grantResults[i] == PackageManager.PERMISSION_GRANTED)
@@ -204,43 +169,11 @@ public class MainActivity extends AppCompatActivity {
     void requestPermissionAll() {
         String[] permissions = {
             mPermissionKeyRecord,
-                mPermissionKeyCarVolume,
-                mPermissionKeyFile,
-                mPermissionKeyCarSetting
+            mPermissionKeyCarVolume,
+            mPermissionKeyFile,
+            mPermissionKeyCarSetting
         };
         ActivityCompat.requestPermissions(this, permissions, 0);
-    }
-
-    private void requestPermissionCarVolume() {
-        if (ContextCompat.checkSelfPermission(this, mPermissionKeyCarVolume) == PackageManager.PERMISSION_GRANTED) {
-            mPermissionCarVolume = true;
-            return ;
-        }
-        requestPermissions(mPermissionKeyCarVolume, PERMISSION_REQUEST_CODE_CARVOLUME);
-    }
-
-    private void requestPermissionRecord() {
-        if (ContextCompat.checkSelfPermission(this, mPermissionKeyRecord) == PackageManager.PERMISSION_GRANTED) {
-            mPermissionRecord = true;
-            return ;
-        }
-        requestPermissions(mPermissionKeyRecord, PERMISSION_REQUEST_CODE_RECORD);
-    }
-
-    private void requestPermissionFile() {
-        if (ContextCompat.checkSelfPermission(this, mPermissionKeyFile) == PackageManager.PERMISSION_GRANTED) {
-            mPermissionFile = true;
-            return ;
-        }
-        requestPermissions(mPermissionKeyFile, PERMISSION_REQUEST_CODE_FILE);
-    }
-
-    private void requestPermissionAudioSetting() {
-        if (ContextCompat.checkSelfPermission(this, mPermissionKeyCarSetting) == PackageManager.PERMISSION_GRANTED) {
-            log("car audio setting permission been has");
-            return;
-        }
-        requestPermissions(mPermissionKeyCarSetting, PERMISSION_REQUEST_CODE_SETTINGS);
     }
 
     private void requestPermissions(String permissions, int requestCode) {
