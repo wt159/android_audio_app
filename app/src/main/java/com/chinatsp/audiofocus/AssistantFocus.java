@@ -12,7 +12,7 @@ public class AssistantFocus extends FocusHandler{
     static private final String TAG = "Mr.Long AssistantFocus ";
     private final MediaPlayer mPlayer;
     private final AudioAttributes attr = new AudioAttributes.Builder()
-            .setUsage(AudioAttributes.USAGE_VOICE_COMMUNICATION)
+            .setUsage(AudioAttributes.USAGE_ASSISTANT)
             .setContentType(AudioAttributes.CONTENT_TYPE_UNKNOWN)
             .build();
     private final AudioFocusRequest afr = new AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT)

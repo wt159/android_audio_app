@@ -1,0 +1,29 @@
+Si479xx sample code under linux.
+
+Quick start tips:
+
+0. Hardware platform:
+	RASP PI + Si479xx head unit daugther card.
+
+1. How to build and clean the build stuff:
+	Run "build.sh" to build the project. (CMake is required); Run "clean.sh" to clean the output files.
+
+2. How to run:
+	After build successful. Run "./bin/si479xx_radio" from flash load and Run "./bin/si479xx_radio ./firmwarefolder" for host load 
+	where firmwarefolder contains si479x.bin and key_exch.key (optional only for si47925).
+
+4. How to burn/dump the firmware image to/from SPI flash.
+	Run "flash_tool" - burn the si479x.bin to SPI flash (si479x.bin and flash_bl.bin are required); 
+	Run "flash_tool -d" - dump the file to si479x.bin (flash_bl.bin is required);
+	Run "flash_tool -h" - help.
+   
+5. Where to get a si479x image (and flash_bl.bin)?
+	In si479x_radio_linux/radio/firmware, they are for test only, not for mass production.
+
+Directory:
+	flash_tool: files for burn and dump flash data.
+	radio: main routine for si479x_radio.
+	tuner: api and sdk.
+	include: header files.
+
+Any question please contact Michael.yi@silabs.com.

@@ -1,6 +1,7 @@
 package com.chinatsp.audiolp;
 
 import android.Manifest;
+import android.audio.policy.configuration.V7_0.AudioDevice;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -10,6 +11,7 @@ import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioTrack;
 import android.media.MediaRecorder;
+import android.media.HwAudioSource;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
     boolean mPermissionCarSettings = false;
     private Context mContext;
 
+    private boolean mFMEnable = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,6 +105,11 @@ public class MainActivity extends AppCompatActivity {
         // 录音 BECALL
         findViewById(R.id.start_record_becall_button).setOnClickListener(this::onClickStartBECALLRecord);
         findViewById(R.id.stop_record_becall_button).setOnClickListener(this::onClickStopBECALLRecord);
+
+        // 录音 FM
+        findViewById(R.id.start_record_fm_button).setOnClickListener(this::onClickStartFMRecord);
+        findViewById(R.id.stop_record_fm_button).setOnClickListener(this::onClickStopFMRecord);
+
 
         // 音量滑动选择组件
         SeekBar volumeSeek = findViewById(R.id.volume_seek);
@@ -282,10 +291,38 @@ public class MainActivity extends AppCompatActivity {
     View.OnClickListener onClickCustom3() {
         return v -> {
             log("onClickCustom3 ");
-            //mAudioManager.setMode(AudioManager.MODE_IN_COMMUNICATION);
-            Locale locale = getResources().getConfiguration().locale;
-            String language = locale.getLanguage(); // 获得语言码
-            log("cur language is " + language);
+            if (false) {
+                AudioDeviceInfo inDevs[] = mAudioManager.getDevices(AudioManager.GET_DEVICES_INPUTS);
+                int fmInfoIndex = -1;
+                for (int i = 0; i < inDevs.length; i++) {
+                    if (inDevs[i].getType() == AudioDeviceInfo.TYPE_FM_TUNER) {
+                        fmInfoIndex = i;
+                    }
+                    log("device|type:" + inDevs[i].getType() + " addr:" + inDevs[i].getAddress());
+                }
+                if (fmInfoIndex == -1) {
+                    log("no fm tuner devices");
+                    return;
+                }
+                log("device info:" + inDevs[fmInfoIndex].toString());
+                HwAudioSource mHwAudioSource = new HwAudioSource.Builder()
+                        .setAudioDeviceInfo(inDevs[fmInfoIndex])
+                        .setAudioAttributes(new AudioAttributes.Builder()
+                                .setUsage(AudioAttributes.USAGE_MEDIA)
+                                .setFlags(0x2)
+                                .build())
+                        .build();
+                mHwAudioSource.start();
+                mHwAudioSource.stop();
+            } else {
+                if (mFMEnable) {
+                    mAudioManager.setParameters("fm_enable=false");
+                    mFMEnable = false;
+                } else {
+                    mAudioManager.setParameters("fm_enable=true");
+                    mFMEnable = true;
+                }
+            }
         };
     }
 
@@ -452,6 +489,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickStopBECALLRecord(View v) {
         log("onClickStopBECALLRecord");
+        if (mBECallRecorder != null) {
+            mBECallRecorder.stop();
+            mBECallRecorder = null;
+        }
+    }
+
+    public void onClickStartFMRecord(View v) {
+        log("onClickStartFMRecord");
+        if (mBECallRecorder == null)
+            mBECallRecorder = new Recorder(mContext, "fm", mAudioManager, "BUS17_INPUT_REAR_SEAT");
+        mBECallRecorder.start();
+    }
+
+    public void onClickStopFMRecord(View v) {
+        log("onClickStopFMRecord");
         if (mBECallRecorder != null) {
             mBECallRecorder.stop();
             mBECallRecorder = null;

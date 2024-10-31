@@ -1,0 +1,11 @@
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!	The firmware in these directories are for RD purpuse. 	!!
+!!		NOT For mass production.			!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+si4790x : compatible with si47901, si47902, si47904, si47951
+si4792x : compatible with si47920, si47921, si47981,
+si4796x : compatible with si47961, si47962
+si47971 : compatible with si47971, si47972
+

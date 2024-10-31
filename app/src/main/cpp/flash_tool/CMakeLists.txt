@@ -1,0 +1,7 @@
+
+AUX_SOURCE_DIRECTORY(. FLASH_TOOL_SRC)
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+
+add_executable(flash_tool ${FLASH_TOOL_SRC})
+
+TARGET_LINK_LIBRARIES(flash_tool platform dcapp si479x)

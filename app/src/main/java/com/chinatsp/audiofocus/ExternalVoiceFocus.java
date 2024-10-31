@@ -13,7 +13,7 @@ public class ExternalVoiceFocus extends FocusHandler{
     static private final String TAG = "Mr.Long ExternalVoiceFocus ";
     private final MediaPlayer mPlayer;
     private final AudioAttributes attr = new AudioAttributes.Builder()
-            .setUsage(AudioAttributes.USAGE_ASSISTANT)
+            .setUsage(AudioAttributes.USAGE_NOTIFICATION)
             .setContentType(AudioAttributes.CONTENT_TYPE_UNKNOWN)
             .build();
     private final AudioFocusRequest afr = new AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT)

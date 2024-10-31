@@ -54,16 +54,11 @@
             android:layout_marginLeft="20dp"
             android:layout_width="260dp"
             android:layout_height="60dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp">
 
         <Button
             android:id="@+id/play_navi_button"
             android:text="request navi"
+            android:layout_marginLeft="20dp"
             android:layout_width="260dp"
             android:layout_height="60dp" />
 
@@ -73,7 +68,6 @@
             android:layout_marginLeft="20dp"
             android:layout_width="260dp"
             android:layout_height="60dp" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -93,39 +87,17 @@
             android:layout_marginLeft="20dp"
             android:layout_width="260dp"
             android:layout_height="60dp" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp">
-        <Button
-            android:id="@+id/play_ktv_button"
-            android:text="request ktv"
-            android:layout_width="260dp"
-            android:layout_height="60dp" />
-
-        <Button
-            android:id="@+id/stop_ktv_button"
-            android:text="abandon ktv"
-            android:layout_marginLeft="20dp"
-            android:layout_width="260dp"
-            android:layout_height="60dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp">
         <Button
             android:id="@+id/play_notification_button"
-            android:text="request notification"
+            android:text="request warning"
+            android:layout_marginLeft="20dp"
             android:layout_width="260dp"
             android:layout_height="60dp" />
 
         <Button
             android:id="@+id/stop_notification_button"
-            android:text="abandon notification"
+            android:text="abandon warning"
             android:layout_marginLeft="20dp"
             android:layout_width="260dp"
             android:layout_height="60dp" />
@@ -136,8 +108,55 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp">
         <Button
+            android:id="@+id/play_call_button"
+            android:text="request call "
+            android:layout_width="260dp"
+            android:layout_height="60dp" />
+        j
+        <Button
+            android:id="@+id/stop_call_button"
+            android:text="abandon call "
+            android:layout_marginLeft="20dp"
+            android:layout_width="260dp"
+            android:layout_height="60dp" />
+
+        <Button
+            android:id="@+id/play_ring_button"
+            android:text="request call ring"
+            android:layout_marginLeft="20dp"
+            android:layout_width="260dp"
+            android:layout_height="60dp" />
+
+        <Button
+            android:id="@+id/stop_ring_button"
+            android:text="abandon call ring"
+            android:layout_marginLeft="20dp"
+            android:layout_width="260dp"
+            android:layout_height="60dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+        <Button
+            android:id="@+id/play_safe_voice_button"
+            android:text="request safe voice"
+            android:layout_width="260dp"
+            android:layout_height="60dp" />
+
+        <Button
+            android:id="@+id/stop_safe_voice_button"
+            android:text="abandon safe voice"
+            android:layout_marginLeft="20dp"
+            android:layout_width="260dp"
+            android:layout_height="60dp" />
+
+        <Button
             android:id="@+id/play_ext_voice_button"
             android:text="request ext voice"
+            android:layout_marginLeft="20dp"
             android:layout_width="260dp"
             android:layout_height="60dp" />
 
@@ -148,5 +167,38 @@
             android:layout_width="260dp"
             android:layout_height="60dp" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+        <Button
+            android:id="@+id/play_bcall_button"
+            android:text="request bcall"
+            android:layout_width="260dp"
+            android:layout_height="60dp" />
+
+        <Button
+            android:id="@+id/stop_bcall_button"
+            android:text="abandon bcall"
+            android:layout_marginLeft="20dp"
+            android:layout_width="260dp"
+            android:layout_height="60dp" />
+
+        <Button
+            android:id="@+id/play_icall_button"
+            android:text="request icall"
+            android:layout_marginLeft="20dp"
+            android:layout_width="260dp"
+            android:layout_height="60dp" />
+
+        <Button
+            android:id="@+id/stop_icall_button"
+            android:text="abandon icall"
+            android:layout_marginLeft="20dp"
+            android:layout_width="260dp"
+            android:layout_height="60dp" />
+    </LinearLayout>
+
 
 </LinearLayout>

@@ -115,38 +115,45 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="60dp" >
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/start_record_button"
-            android:text="开始录音"
             android:layout_width="260dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="20dp"/>
+            android:layout_marginStart="20dp"
+            android:text="开始录音" />
 
         <Button
             android:id="@+id/start_record_ext_button"
-            android:text="开始录音(车外)"
             android:layout_width="260dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="20dp"/>
+            android:layout_marginStart="20dp"
+            android:text="开始录音(车外)" />
 
         <Button
             android:id="@+id/start_record_ecns_button"
-            android:text="开始录音(ecns)"
-            android:layout_width="260dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="20dp"/>
+            android:layout_marginStart="20dp"
+            android:text="开始录音(ecns)" />
 
         <Button
             android:id="@+id/start_record_becall_button"
-            android:text="开始录音(b/e call)"
             android:layout_width="260dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="20dp"/>
+            android:layout_marginStart="20dp"
+            android:text="开始录音(b/e call)" />
+
+        <Button
+            android:id="@+id/start_record_fm_button"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="开始录音(FM)" />
 
 
     </LinearLayout>
@@ -185,6 +192,14 @@
             android:layout_width="260dp"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"/>
+
+        <Button
+            android:id="@+id/stop_record_fm_button"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:text="停止录音(FM)" />
     </LinearLayout>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
