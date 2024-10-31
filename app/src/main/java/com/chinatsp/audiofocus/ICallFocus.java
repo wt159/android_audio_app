@@ -6,10 +6,10 @@ import android.media.AudioFocusRequest;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 
-import com.chinatsp.audiolp.R;
+import com.chinatsp.audiolp.*;
 
 public class ICallFocus extends FocusHandler {
-    static private final String TAG = "Mr.Long MediaFocus ";
+    static private final String TAG = LogUtils.TAG + ICallFocus.class.getSimpleName() + " : ";
     private final MediaPlayer mMediaPlayer;
     private final AudioAttributes attr = new AudioAttributes.Builder()
             .setUsage(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)

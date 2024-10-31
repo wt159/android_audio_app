@@ -9,7 +9,7 @@ import android.media.AudioManager;
 import android.media.audiofx.AudioEffect;
 import android.media.audiofx.NoiseSuppressor;
 
-import com.chinatsp.audiolp.MainActivity;
+import com.chinatsp.audiolp.*;
 
 import java.util.Objects;
 
@@ -19,7 +19,7 @@ public class AudioController {
     private CarAudioManager mCarAudioManager;
     private Context mContext;
     private AudioManager mAudioManager;
-    private String TAG = "Mr.Long AudioController ";
+    static private final String TAG = LogUtils.TAG + AudioController.class.getSimpleName() + " : ";
     private AudioEffect mAE;
 
     public AudioController(Context context) {

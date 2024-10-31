@@ -20,8 +20,10 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 
 import com.chinatsp.audiofocus.AudioFocusActivity;
+import com.chinatsp.audiofocus.ICallFocus;
 import com.chinatsp.parse.CarAudioPlatformConfig;
-import com.chinatsp.audcal.*;
+import com.chinatsp.audiolp.*;
+import com.chinatsp.audiofocus.*;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
@@ -41,7 +43,7 @@ import androidx.core.content.ContextCompat;
 import static android.media.AudioFormat.ENCODING_PCM_16BIT;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "Mr.Long MainActivity ";
+    static private final String TAG = LogUtils.TAG + MainActivity.class.getSimpleName() + " : ";
     private int mVolumeGroup = 0;
     private AudioController mAudioController;
     private Recorder mRecorder = null;

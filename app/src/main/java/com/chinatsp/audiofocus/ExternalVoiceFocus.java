@@ -7,10 +7,10 @@ import android.media.AudioFocusRequest;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 
-import com.chinatsp.audiolp.R;
+import com.chinatsp.audiolp.*;
 
 public class ExternalVoiceFocus extends FocusHandler{
-    static private final String TAG = "Mr.Long ExternalVoiceFocus ";
+    static private final String TAG = LogUtils.TAG + ExternalVoiceFocus.class.getSimpleName() + " : ";
     private final MediaPlayer mPlayer;
     private final AudioAttributes attr = new AudioAttributes.Builder()
             .setUsage(AudioAttributes.USAGE_NOTIFICATION)

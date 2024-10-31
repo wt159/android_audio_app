@@ -11,9 +11,11 @@ import android.media.audiofx.NoiseSuppressor;
 import java.io.IOException;
 import android.os.Environment;
 import android.content.Context;
+import com.chinatsp.audiolp.*;
+import com.chinatsp.audiofocus.ICallFocus;
 
 public class Recorder {
-    private static String TAG = "Mr.Long AudioRecorder ";
+    static private final String TAG = LogUtils.TAG + Recorder.class.getSimpleName() + " : ";
     private AudioRecord mAudioRecord;
     private final int mSampleRate = 16000;
     private final int mFormat = AudioFormat.ENCODING_PCM_16BIT;

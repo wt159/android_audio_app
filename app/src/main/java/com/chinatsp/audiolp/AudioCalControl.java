@@ -10,7 +10,7 @@ import java.nio.ByteOrder;
 import androidx.annotation.NonNull;
 
 class AudioCalControl {
-    private static final String TAG = "Mr.Long AudioCalControl ";
+    static private final String TAG = LogUtils.TAG + AudioCalControl.class.getSimpleName() + " : ";
     private final AudioManager mAudioManager;
 
     static private  int mPersist = 0;

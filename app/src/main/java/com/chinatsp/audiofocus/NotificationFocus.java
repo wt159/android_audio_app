@@ -6,10 +6,10 @@ import android.media.AudioFocusRequest;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 
-import com.chinatsp.audiolp.R;
+import com.chinatsp.audiolp.*;
 
 public class NotificationFocus extends FocusHandler{
-    static private final String TAG = "Mr.Long NotificationFocus ";
+    static private final String TAG = LogUtils.TAG + NotificationFocus.class.getSimpleName() + " : ";
     private final MediaPlayer mPlayer;
     private final AudioAttributes attr = new AudioAttributes.Builder()
             .setUsage(AudioAttributes.USAGE_ALARM)

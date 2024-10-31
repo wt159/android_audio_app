@@ -6,14 +6,12 @@ import android.media.AudioManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
-import com.chinatsp.audiolp.R;
-
+import com.chinatsp.audiolp.*;
 import java.util.ArrayList;
 
 
 public class AudioFocusActivity extends Activity {
-    private final static String TAG = "Mr.Long AudioFocusActivity: ";
+    private final static String TAG = LogUtils.TAG + AudioFocusActivity.class.getSimpleName() + " : ";
     OnClickHandler mOnClickHandler;
     private AudioManager mAudioManager;
     private ArrayList<FocusHandler> mFocusLists;
@@ -56,6 +54,7 @@ public class AudioFocusActivity extends Activity {
         findViewById(R.id.play_icall_button).setOnClickListener(icall::requestClick);
         findViewById(R.id.stop_icall_button).setOnClickListener(icall::abandonClick);
 
+        mFocusLists = new ArrayList<FocusHandler>();
         mFocusLists.add(media);
         mFocusLists.add(navi);
         mFocusLists.add(assi);

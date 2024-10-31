@@ -11,7 +11,7 @@ import android.media.MediaPlayer;
 import android.os.Build;
 import android.view.View;
 
-import com.chinatsp.audiolp.R;
+import com.chinatsp.audiolp.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,7 +21,7 @@ import java.util.Objects;
 import androidx.annotation.NonNull;
 
 public class OnClickHandler {
-    private final static String TAG = "Mr.Long OnClickHandler ";
+    static private final String TAG = LogUtils.TAG + OnClickHandler.class.getSimpleName() + " : ";
     private final Context mContext;
     private ArrayList<FocusHandler> mFocusLists;
 

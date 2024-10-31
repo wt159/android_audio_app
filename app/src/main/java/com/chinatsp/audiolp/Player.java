@@ -4,7 +4,7 @@ import android.media.AudioFormat;
 import android.media.MediaPlayer;
 
 public class Player {
-    private static String TAG = "Mr.Long AudioRecorder ";
+    static private final String TAG = LogUtils.TAG + Player.class.getSimpleName() + " : ";
     private MediaPlayer mMediaPlayer;
     private final int mSampleRate = 48000;
     private final int mFormat = AudioFormat.ENCODING_PCM_16BIT;

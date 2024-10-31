@@ -5,11 +5,11 @@ import android.media.AudioAttributes;
 import android.media.AudioFocusRequest;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-
-import com.chinatsp.audiolp.R;
+import com.chinatsp.audiolp.LogUtils;
+import com.chinatsp.audiolp.*;
 
 public class AssistantFocus extends FocusHandler{
-    static private final String TAG = "Mr.Long AssistantFocus ";
+    static private final String TAG = LogUtils.TAG + AssistantFocus.class.getSimpleName() + " : ";
     private final MediaPlayer mPlayer;
     private final AudioAttributes attr = new AudioAttributes.Builder()
             .setUsage(AudioAttributes.USAGE_ASSISTANT)

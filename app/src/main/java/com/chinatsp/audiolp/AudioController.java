@@ -10,13 +10,15 @@ import android.media.audiofx.AudioEffect;
 
 import java.util.Objects;
 
+import com.chinatsp.audiofocus.ICallFocus;
+import com.chinatsp.audiolp.*;
 import androidx.core.content.ContextCompat;
 
 public class AudioController {
     private CarAudioManager mCarAudioManager;
     private Context mContext;
     private AudioManager mAudioManager;
-    private String TAG = "Mr.Long AudioController ";
+    static private final String TAG = LogUtils.TAG + AudioController.class.getSimpleName() + " : ";
     private AudioEffect mAE;
 
     public AudioController(Context context) {
