@@ -136,7 +136,7 @@
 
         <Button
             android:id="@+id/start_record_ecns_button"
-            android:layout_width="wrap_content"
+            android:layout_width="260dp"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
             android:text="开始录音(ecns)" />
