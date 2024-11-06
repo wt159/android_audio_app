@@ -1,21 +1,44 @@
 #!/bin/bash
-
-projectdir=$(pwd)
-echo $projectdir
-
-if [ ! -d build ]; then
-	mkdir -p build
-fi
-
 cd build
-cmake ..
-make
-
-cd ..
-
-if [ ! -d bin ]; then
-	mkdir -p bin
+if [[ “$@“ =~ "-c" ]];then
+    echo "----------------------------cmake clean----------------------------"
+    rm -rf ./*
+    exit
 fi
 
-mv build/bin/si479x_radio ./bin
-mv build/bin/flash_tool ./bin
+
+
+export ANDROID_NDK_HOME=/home/weitaiping/study/android-ndk-r21e
+export PATH=$ANDROID_NDK_HOME:$PATH
+ 
+if [[ “$@“ =~ "-r" ]];then
+    echo "----------------------------cmake release----------------------------"
+    cmake -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK_HOME/build/cmake/android.toolchain.cmake \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DANDROID_NDK=$ANDROID_NDK_HOME \
+        -DANDROID_ABI=arm64-v8a \
+        -DANDROID_PLATFORM=android-21 \
+        -DANDROID_STL=c++_static \
+        -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+        -DCMAKE_VERBOSE_MAKEFILE=ON \
+        ..
+else      
+    echo "----------------------------cmake debug----------------------------"
+    cmake -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK_HOME/build/cmake/android.toolchain.cmake \
+        -DCMAKE_BUILD_TYPE=Debug \
+        -DANDROID_NDK=$ANDROID_NDK_HOME \
+        -DANDROID_ABI=arm64-v8a \
+        -DANDROID_PLATFORM=android-21 \
+        -DANDROID_STL=c++_static \
+        -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+        -DCMAKE_VERBOSE_MAKEFILE=OFF \
+        ..
+fi
+	  
+make 
+ 
+rm -rf CMakeCache.txt
+rm -rf CMakeFiles
+rm -rf cmake_install.cmake
+rm -rf Makefile
+rm -rf CTestTestfile.cmake
